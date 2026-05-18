@@ -5,11 +5,14 @@ let app = express();
 console.log("Hello World");
 
 // Exerc. 2
-app.get('/', (req, res) => {
+//app.get('/', (req, res) => {
+//        res.send("Hello Express");
+//});
 
-    res.send("Hello Express");
-
-})
+// Exerc.3
+app.get("/", (req, res) =>{
+    res.sendFile( __dirname + '/views/index.html');
+});
 
 
 
