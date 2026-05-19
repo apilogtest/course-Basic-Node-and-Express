@@ -1,4 +1,4 @@
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); // Exerc. 11 require
 require('dotenv').config();
 let express = require('express');
 let app = express();
@@ -68,10 +68,20 @@ app.get('/:word/echo', (req, res) =>{
 });
 
 // Exerc. 10
-app.get('/name', (req, res) => {
+//app.get('/name', (req, res) => {
+
+//    res.json({ name: req.query.first + " " + req.query.last });
+//});
+
+// Exerc. 12
+app.route('/name').get((req, res) => {
 
     res.json({ name: req.query.first + " " + req.query.last });
+}).post((req, res) =>{
+
+    res.json({ name: req.body.first + " " + req.body.last });
 });
+
 
 
  module.exports = app;
