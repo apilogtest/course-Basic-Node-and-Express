@@ -1,6 +1,10 @@
+const bodyParser = require('body-parser');
 require('dotenv').config();
 let express = require('express');
 let app = express();
+
+// Exerc. 11 middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Exerc. 7
 app.use("/", (req, res, next) =>{
