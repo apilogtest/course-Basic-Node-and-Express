@@ -25,13 +25,15 @@ app.get("/", (req, res) =>{
 
 // Exerc. 6
 app.get("/json", (req, res) =>{
-    const msg = { "message": "Hello json" };
+    //const msg = { "message": "Hello json" };
 
     if( process.env.MESSAGE_STYLE === 'uppercase' ) {
-        msg.message = msg.message.toUpperCase();
-      };
+        res.json({ "message": "HELLO JSON" });
+    } else {
+        res.json({ "message": "Hello json" });
+    }
 
-    return res.json(msg);
+    //return res.json(msg);
 });
 
 
