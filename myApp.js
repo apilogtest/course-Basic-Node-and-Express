@@ -9,10 +9,14 @@ console.log("Hello World");
 //        res.send("Hello Express");
 //});
 
+// Exerc. 4 => middleware to serve static files, such as stylesheets
+app.use('/public',express.static(__dirname + '/public'));
+
 // Exerc.3
 app.get("/", (req, res) =>{
     res.sendFile( __dirname + '/views/index.html');
 });
+
 
 
 
