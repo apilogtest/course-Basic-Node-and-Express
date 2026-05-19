@@ -2,6 +2,11 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
+// Exerc. 7
+app.use("/", (req, res, next) =>{
+    console.log(req.method + " " + req.path + " " + "-" + " " + req.ip );
+    next();
+});
 
 // Exer. 1
 console.log("Hello World");
